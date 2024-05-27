@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="border d-flex flex-column align-items-center justify-content-center">
+        <img class="img-fluid h-20 w-50 logo" src="assets/images/Logo.png">
+        <div class="container-fluid container-inside">
+            <div class="border-inside">
+              <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+                <div class="form-group pt-5" [class.invalid]="loginForm.submitted && !userName">
+                  <label for="userName" class="label">USERNAME</label>
+                  <input type="text" class="form-control" [(ngModel)]="userName" name="userName" required autocomplete="text" [ngModelOptions]="{ standalone: true }">
+                  <div *ngIf="loginForm.submitted && !userName"></div>
+                </div>
+                <div class="form-group pt-3" [class.invalid]="loginForm.submitted && !password">
+                  <label for="password" class="label">PASSWORD</label>
+                  <input type="password" class="form-control" [(ngModel)]="password" name="password" required autocomplete="current-password" [ngModelOptions]="{ standalone: true }">
+                  <div *ngIf="loginForm.submitted && !password"></div>
+                </div>
+                <div class="d-flex btn-container pt-4">
+                  <button type="submit" class="btn btn-primary text-dark mx-auto">LOG IN</button>
+                </div>
+              </form>
+              
+            </div>
+        </div>
+    </div>
+</div>

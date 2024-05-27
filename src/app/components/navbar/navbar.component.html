@@ -1,0 +1,59 @@
+<!-- <div class="highlight-rectangle"></div>
+
+<nav class="navbar navbar-expand-lg navbarCSS">
+  <div class="container-fluid">
+    <img class="LogoCSS" src="assets/images/Logo.png">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse NavTextCSS" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">My Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/timelogs">My Time Logs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard">Team Dashboard</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        Settings
+      </span>
+    </div>
+  </div>
+</nav> -->
+
+<div class="highlight-rectangle"></div> 
+
+<nav class="navbar navbar-expand-lg navbarCSS">
+  <div class="container-fluid">
+    <img class="LogoCSS" src="assets/images/Logo.png">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse NavTextCSS" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">My Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/timelogs">My Time Logs</a>
+        </li>
+        
+        <ng-container *ngIf="isAdmin">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin-dashboard">Admin Dashboard</a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="isManager">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/manager-dashboard">Team Dashboard</a>
+          </li>
+        </ng-container>
+      </ul>
+      <span class="navbar-text" (click)="logout()">Log out</span>
+    </div>
+  </div>
+</nav>

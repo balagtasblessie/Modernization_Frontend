@@ -1,0 +1,65 @@
+/* Styles for the highlight rectangle */
+.highlight-rectangle {
+    height: 2px;
+    width: 100%; 
+    background-color: #2F5DFF; 
+  }
+
+/* Navbar styling */
+.navbarCSS {
+    height: 50px; 
+    background-color: #002B9B; 
+  }
+  
+  /* Styling logo */
+  .LogoCSS {
+    height: 45px; 
+  }
+  
+  /* Styling the rectangular above */
+  .rectangular {
+    height: 2px;
+    background-color: #2F5DFF; 
+  }
+  
+  /* Styling navbar toggler icon */
+  .navbar-toggler-icon {
+    background-color: #000000; 
+  }
+  
+  /* Styling nav links */
+  .NavTextCSS .nav-link {
+    color: #000000; 
+  }
+
+  /* Making text inside navbar white */
+.navbarCSS .navbar-text,
+.navbarCSS .nav-link {
+  color: #ffffff; 
+  font-size: 12px;
+}
+
+  
+/* Styling active nav link */
+.NavTextCSS .nav-link.active {
+    position: relative;
+  }
+  
+  /* Highlight box for active link */
+  .NavTextCSS .nav-link.active::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; 
+    transform: translateY(-50%);
+    z-index: -1; 
+    border: 2px solid #ffffff; 
+    box-sizing: border-box; 
+  }
+  .navbar-text:hover {
+    cursor: pointer;
+  }
+  

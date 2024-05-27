@@ -1,0 +1,89 @@
+
+<app-navbar></app-navbar>
+
+<!-- Breadcrumb menu -->
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb ps-5 pt-3">
+      <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Timelogs</li>
+    </ol>
+  </nav>
+
+   <!--  -->
+<div class="filters"><span class="reload pe-3"><i class="fa-solid fa-rotate"></i></span>Reload <span class="add pe-2 ps-5"><i class="fa-solid fa-plus"></i></span> Add
+
+  <div class="btn-group ps-5">
+    <button class="btn btn-sm label" type="button">
+      Filter  
+    </button>
+    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+    <button type="button" class="btn btn-sm btn-white dropdown-toggle dropdown-toggle-split border border-start-0" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <span class="visually-hidden">Toggle Dropdown</span>
+    <ul class="dropdown-menu">
+    ...
+    </ul>
+  </div>
+
+  <div class="btn-group ps-3">
+    <button class="btn btn-sm label" type="button">
+      Period  
+    </button>
+    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+    <button type="button" class="btn btn-sm btn-white dropdown-toggle dropdown-toggle-split border border-start-0" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <span class="visually-hidden">Toggle Dropdown</span>
+    <ul class="dropdown-menu">
+    ...
+    </ul>
+  </div>
+
+  <div class="btn-group ps-3">
+    <button class="btn btn-sm label" type="button">
+      Employee  
+    </button>
+    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+    <button type="button" class="btn btn-sm btn-white dropdown-toggle dropdown-toggle-split border border-start-0" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <span class="visually-hidden">Toggle Dropdown</span>
+    <ul class="dropdown-menu">
+    ...
+    </ul>
+  </div>
+
+
+ <!-- Project Name -->
+<div class="project-container">
+  <div class="project-label">
+    <i class="fa-solid fa-cube fa-xl pe-3" style="color: #FFD43B;"></i>
+      <div class="text-container">
+          <h6>{{fullName}}</h6>
+          <p>Project Name</p>
+      </div>
+  </div>
+</div>
+
+
+  <div class="container table-container d-flex">
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search...">
+    </div>
+    
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Clock-In</th>
+          <th scope="col">Clock-Out</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let log of (timeLogsList|async )">
+          <td>{{ log.clockIn | date: 'mediumDate' }}</td>
+          <td class="time">{{ log.clockIn | date: 'shortTime' }}</td>
+          <td class="time">{{ log.clockOut | date: 'shortTime' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  

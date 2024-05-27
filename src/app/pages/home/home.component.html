@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<!-- <p class="reload"><span><i class="fa-solid fa-rotate"></i></span> Reload</p> -->
+
+<!-- Clock In/Out Button -->
+<button class="button-container" (click)="isClockedIn ? onClickClockOut() : onClickClockIn()">
+  <img src="assets/images/clock.png" alt="Image">
+  <span class="button-text">{{ buttonText }}</span>
+</button>
+
+
+<!-- Project Name -->
+<div class="project-container">
+  <div class="project-label">
+    <i class="fa-solid fa-cube fa-xl pe-3" style="color: #FFD43B;"></i>
+      <div class="text-container">
+          <h6>{{fullName}}</h6>
+          <p>Project Name</p>
+      </div>
+  </div>
+</div>
+
+<!-- Time Logs Table -->
+<div class="container table-container d-flex">
+  <table class="table">
+    <thead class="thead">
+      <th scope="col">Date</th>
+      <th scope="col">Clock-In</th>
+      <th scope="col">Clock-Out</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of timeLogsList">
+        <td>{{ log.clockIn | date: 'fullDate' }}</td>
+        <td class="time">{{ log.clockIn | date: 'shortTime' }}</td>
+        <td class="time">{{ log.clockOut ? (log.clockOut | date: 'shortTime') : '-' }}</td>
+      </tr>
+      <!-- Show if there are no time logs -->
+      <tr *ngIf="timeLogsList.length === 0">
+        <td colspan="3">No time logs yet</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
